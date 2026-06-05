@@ -1,0 +1,47 @@
+{
+  "name": "2D Top-Down Scene",
+  "description": "Top-down 2D game level (RPG, action, twin-stick)",
+  "rootNodeType": "Node2D",
+  "rootNodeName": "Level",
+  "nodes": [
+    {
+      "type": "Node2D",
+      "name": "World",
+      "children": [
+        { "type": "TileMapLayer", "name": "Ground" },
+        { "type": "TileMapLayer", "name": "Walls" },
+        { "type": "TileMapLayer", "name": "Decoration" },
+        { "type": "NavigationRegion2D", "name": "NavigationRegion2D" }
+      ]
+    },
+    {
+      "type": "CharacterBody2D",
+      "name": "Player",
+      "children": [
+        { "type": "Sprite2D", "name": "Sprite2D" },
+        { "type": "CollisionShape2D", "name": "CollisionShape2D" },
+        { "type": "Camera2D", "name": "Camera2D", "properties": { "position_smoothing_enabled": true } },
+        { "type": "Area2D", "name": "InteractionArea" }
+      ]
+    },
+    {
+      "type": "Node2D",
+      "name": "NPCs",
+      "children": []
+    },
+    {
+      "type": "Node2D",
+      "name": "Items",
+      "children": []
+    },
+    {
+      "type": "CanvasLayer",
+      "name": "UI",
+      "children": [
+        { "type": "Control", "name": "HUD" },
+        { "type": "Control", "name": "DialogueBox" },
+        { "type": "Control", "name": "InventoryPanel" }
+      ]
+    }
+  ]
+}

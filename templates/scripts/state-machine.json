@@ -1,0 +1,12 @@
+{
+  "name": "State Machine",
+  "description": "Generic finite state machine pattern with typed states and transition signals",
+  "filename": "state_machine.gd",
+  "template": "class_name StateMachine\nextends Node\n\n## Emitted when the active state changes\nsignal state_changed(old_state: State, new_state: State)\n\n## The initial state (set in editor)\n@export var initial_state: State\n\n## Current active state\nvar current_state: State\n\n## All registered states\nvar _states: Dictionary = {}\n\n\nfunc _ready() -> void:\n\tfor child in get_children():\n\t\tif child is State:\n\t\t\t_states[child.name.to_lower()] = child\n\t\t\tchild.state_machine = self\n\n\tif initial_state:\n\t\tcurrent_state = initial_state\n\t\tcurrent_state.enter()\n\n\nfunc _process(delta: float) -> void:\n\tif current_state:\n\t\tcurrent_state.update(delta)\n\n\nfunc _physics_process(delta: float) -> void:\n\tif current_state:\n\t\tcurrent_state.physics_update(delta)\n\n\nfunc _unhandled_input(event: InputEvent) -> void:\n\tif current_state:\n\t\tcurrent_state.handle_input(event)\n\n\nfunc transition_to(target_state_name: String, data: Dictionary = {}) -> void:\n\tvar target_state: State = _states.get(target_state_name.to_lower())\n\tif not target_state:\n\t\tpush_warning(\"State '%s' not found in StateMachine\" % target_state_name)\n\t\treturn\n\tif target_state == current_state:\n\t\treturn\n\n\tvar old_state := current_state\n\tcurrent_state.exit()\n\tcurrent_state = target_state\n\tcurrent_state.enter(data)\n\tstate_changed.emit(old_state, current_state)\n",
+  "additional_files": [
+    {
+      "filename": "state.gd",
+      "template": "class_name State\nextends Node\n\n## Reference to the parent state machine (set automatically)\nvar state_machine: StateMachine\n\n\n## Called when entering this state\nfunc enter(_data: Dictionary = {}) -> void:\n\tpass\n\n\n## Called when exiting this state\nfunc exit() -> void:\n\tpass\n\n\n## Called every frame while this state is active\nfunc update(_delta: float) -> void:\n\tpass\n\n\n## Called every physics frame while this state is active\nfunc physics_update(_delta: float) -> void:\n\tpass\n\n\n## Called for unhandled input while this state is active\nfunc handle_input(_event: InputEvent) -> void:\n\tpass\n"
+    }
+  ]
+}

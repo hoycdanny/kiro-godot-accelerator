@@ -1,0 +1,55 @@
+{
+  "name": "3D First-Person Shooter Scene",
+  "description": "Complete 3D FPS level with player controller, lighting, and UI",
+  "rootNodeType": "Node3D",
+  "rootNodeName": "Level",
+  "nodes": [
+    {
+      "type": "WorldEnvironment",
+      "name": "WorldEnvironment"
+    },
+    {
+      "type": "DirectionalLight3D",
+      "name": "Sun",
+      "properties": { "rotation_degrees": { "x": -45, "y": 30, "z": 0 } }
+    },
+    {
+      "type": "Node3D",
+      "name": "World",
+      "children": [
+        { "type": "Node3D", "name": "StaticGeometry" },
+        { "type": "Node3D", "name": "InteractableObjects" }
+      ]
+    },
+    {
+      "type": "CharacterBody3D",
+      "name": "Player",
+      "children": [
+        { "type": "CollisionShape3D", "name": "CollisionShape3D" },
+        {
+          "type": "Node3D",
+          "name": "Head",
+          "children": [
+            { "type": "Camera3D", "name": "Camera3D" }
+          ]
+        },
+        { "type": "Node3D", "name": "WeaponHolder" },
+        { "type": "RayCast3D", "name": "InteractionRay" }
+      ]
+    },
+    {
+      "type": "Node3D",
+      "name": "Enemies",
+      "children": []
+    },
+    {
+      "type": "CanvasLayer",
+      "name": "UI",
+      "children": [
+        { "type": "CenterContainer", "name": "Crosshair" },
+        { "type": "Control", "name": "HUD" },
+        { "type": "Control", "name": "PauseMenu" }
+      ]
+    }
+  ]
+}

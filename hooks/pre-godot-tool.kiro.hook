@@ -1,0 +1,12 @@
+{
+  "name": "Godot Accelerator Auto-Guidance",
+  "version": "1.0.0",
+  "description": "Automatically activates the Godot Accelerator Power and loads appropriate steering files before each prompt",
+  "when": {
+    "type": "promptSubmit"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Before responding, activate the kiro-godot-accelerator Power and consult the relevant steering file based on the user's request domain: gdscript-patterns.md for scripting, scene-architecture.md for scene work, signal-patterns.md for communication, performance.md for optimization, asset-pipeline.md for assets, shader-workflow.md for shaders, ui-system.md for UI, animation-system.md for animation, tilemap-system.md for tilemaps, platform-compat.md for export/platform, project-structure.md for organization, networking.md for multiplayer, mcp-workflow.md for MCP tool usage. Use MCP tools (godot-mcp) for direct editor operations when applicable."
+  }
+}

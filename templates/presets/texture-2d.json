@@ -1,0 +1,17 @@
+{
+  "name": "2D HD Texture Preset",
+  "description": "Import settings for high-definition 2D art (linear filtering, VRAM compressed)",
+  "applies_to": "*.png,*.jpg,*.webp",
+  "settings": {
+    "compress/mode": 2,
+    "compress/high_quality": false,
+    "mipmaps/generate": false,
+    "process/fix_alpha_border": true,
+    "process/premult_alpha": false
+  },
+  "notes": [
+    "Mode 2 = VRAM Compressed (platform auto-selects S3TC/ETC2/ASTC)",
+    "Enable mipmaps only if sprite will be scaled down significantly",
+    "Fix Alpha Border prevents edge artifacts on transparent sprites"
+  ]
+}

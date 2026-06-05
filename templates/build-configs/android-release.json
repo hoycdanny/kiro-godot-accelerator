@@ -1,0 +1,27 @@
+{
+  "name": "Android Release Build",
+  "description": "Production export configuration for Android",
+  "platform": "Android",
+  "command": "godot --headless --export-release \"Android\" builds/android/game.apk",
+  "settings": {
+    "min_sdk": 24,
+    "target_sdk": 34,
+    "architectures_arm64_v8a": true,
+    "architectures_armeabi_v7a": false,
+    "package_unique_name": "com.studio.gamename",
+    "version_code": 1,
+    "version_name": "1.0.0"
+  },
+  "prerequisites": [
+    "Android SDK installed (via Android Studio or standalone)",
+    "JDK 17 installed",
+    "Debug keystore generated: keytool -genkey -v -keystore debug.keystore -alias debug -keyalg RSA -keysize 2048 -validity 10000",
+    "Editor Settings → Export → Android configured with SDK/JDK paths",
+    "Release keystore for production builds"
+  ],
+  "notes": [
+    "APK size limit for Google Play: 200 MB (use AAB for larger)",
+    "Test on multiple GPU architectures: Adreno, Mali, PowerVR",
+    "Enable 'Internet' permission if game uses networking"
+  ]
+}

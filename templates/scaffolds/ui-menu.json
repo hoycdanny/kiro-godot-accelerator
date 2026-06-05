@@ -1,0 +1,48 @@
+{
+  "name": "UI Menu Scene",
+  "description": "Main menu with title, buttons, and settings panel",
+  "rootNodeType": "Control",
+  "rootNodeName": "MainMenu",
+  "nodes": [
+    {
+      "type": "TextureRect",
+      "name": "Background",
+      "properties": { "anchors_preset": "PRESET_FULL_RECT" }
+    },
+    {
+      "type": "MarginContainer",
+      "name": "Content",
+      "properties": { "anchors_preset": "PRESET_FULL_RECT" },
+      "children": [
+        {
+          "type": "VBoxContainer",
+          "name": "MenuContainer",
+          "properties": { "alignment": 1 },
+          "children": [
+            { "type": "Label", "name": "TitleLabel", "properties": { "text": "Game Title", "horizontal_alignment": 1 } },
+            { "type": "Button", "name": "StartButton", "properties": { "text": "Start Game" } },
+            { "type": "Button", "name": "SettingsButton", "properties": { "text": "Settings" } },
+            { "type": "Button", "name": "QuitButton", "properties": { "text": "Quit" } }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "PanelContainer",
+      "name": "SettingsPanel",
+      "properties": { "visible": false, "anchors_preset": "PRESET_CENTER" },
+      "children": [
+        {
+          "type": "VBoxContainer",
+          "name": "SettingsContent",
+          "children": [
+            { "type": "Label", "name": "SettingsTitle", "properties": { "text": "Settings" } },
+            { "type": "HSlider", "name": "VolumeSlider" },
+            { "type": "CheckButton", "name": "FullscreenToggle", "properties": { "text": "Fullscreen" } },
+            { "type": "Button", "name": "BackButton", "properties": { "text": "Back" } }
+          ]
+        }
+      ]
+    }
+  ]
+}

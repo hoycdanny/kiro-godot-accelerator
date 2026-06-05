@@ -1,0 +1,24 @@
+{
+  "name": "Pixel Art Texture Preset",
+  "description": "Import settings optimized for pixel art (no filtering, no mipmaps, lossless compression)",
+  "applies_to": "*.png,*.bmp",
+  "settings": {
+    "compress/mode": 0,
+    "compress/high_quality": false,
+    "mipmaps/generate": false,
+    "roughness/mode": 0,
+    "process/fix_alpha_border": false,
+    "process/premult_alpha": false,
+    "detect_3d/compress_to": 0
+  },
+  "project_settings": {
+    "rendering/textures/canvas_textures/default_texture_filter": 0,
+    "rendering/2d/snap/snap_2d_transforms_to_pixel": true,
+    "rendering/2d/snap/snap_2d_vertices_to_pixel": true
+  },
+  "notes": [
+    "Set Project → Project Settings → Rendering → Textures → Default Texture Filter to 'Nearest'",
+    "Enable pixel snapping for crisp movement",
+    "Use integer scaling for display resolution"
+  ]
+}

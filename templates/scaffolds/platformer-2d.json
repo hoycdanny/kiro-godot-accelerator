@@ -1,0 +1,46 @@
+{
+  "name": "2D Platformer Scene",
+  "description": "Complete 2D platformer level with player, terrain, camera, and UI",
+  "rootNodeType": "Node2D",
+  "rootNodeName": "Level",
+  "nodes": [
+    {
+      "type": "Node2D",
+      "name": "World",
+      "children": [
+        { "type": "TileMapLayer", "name": "Background", "properties": { "z_index": -1 } },
+        { "type": "TileMapLayer", "name": "Terrain", "properties": { "z_index": 0 } },
+        { "type": "TileMapLayer", "name": "Foreground", "properties": { "z_index": 1 } }
+      ]
+    },
+    {
+      "type": "CharacterBody2D",
+      "name": "Player",
+      "properties": { "position": { "x": 100, "y": 200 } },
+      "children": [
+        { "type": "Sprite2D", "name": "Sprite2D" },
+        { "type": "CollisionShape2D", "name": "CollisionShape2D" },
+        { "type": "AnimationPlayer", "name": "AnimationPlayer" },
+        { "type": "Camera2D", "name": "Camera2D", "properties": { "position_smoothing_enabled": true } }
+      ]
+    },
+    {
+      "type": "Node2D",
+      "name": "Enemies",
+      "children": []
+    },
+    {
+      "type": "Node2D",
+      "name": "Collectibles",
+      "children": []
+    },
+    {
+      "type": "CanvasLayer",
+      "name": "UI",
+      "children": [
+        { "type": "Control", "name": "HUD" },
+        { "type": "Control", "name": "PauseMenu" }
+      ]
+    }
+  ]
+}

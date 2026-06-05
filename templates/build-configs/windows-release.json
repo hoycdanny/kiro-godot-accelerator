@@ -1,0 +1,18 @@
+{
+  "name": "Windows Release Build",
+  "description": "Production export configuration for Windows Desktop",
+  "platform": "Windows Desktop",
+  "command": "godot --headless --export-release \"Windows Desktop\" builds/windows/game.exe",
+  "settings": {
+    "architecture": "x86_64",
+    "export_mode": "export_all_resources",
+    "binary_format": "64 bits",
+    "embed_pck": true,
+    "codesign": false
+  },
+  "notes": [
+    "Requires export template installed: Editor → Export → Manage Export Templates",
+    "For Steam: set custom_features = 'steam' and include Steamworks SDK",
+    "For codesigning: requires signtool.exe and valid certificate"
+  ]
+}

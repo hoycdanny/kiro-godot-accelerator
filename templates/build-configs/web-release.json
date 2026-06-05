@@ -1,0 +1,19 @@
+{
+  "name": "Web Release Build",
+  "description": "Production export configuration for HTML5/Web",
+  "platform": "Web",
+  "command": "godot --headless --export-release \"Web\" builds/web/index.html",
+  "settings": {
+    "vram_texture_compression_for_desktop": true,
+    "vram_texture_compression_for_mobile": true,
+    "export_type": "regular",
+    "threads_support": true
+  },
+  "notes": [
+    "Requires HTTPS server with Cross-Origin headers for SharedArrayBuffer (threads)",
+    "Headers needed: Cross-Origin-Opener-Policy: same-origin, Cross-Origin-Embedder-Policy: require-corp",
+    "Without these headers, threads will be disabled (single-threaded fallback)",
+    "Max recommended WASM memory: 512 MB",
+    "Test on multiple browsers: Chrome, Firefox, Safari"
+  ]
+}

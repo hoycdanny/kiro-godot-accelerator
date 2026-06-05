@@ -1,0 +1,41 @@
+{
+  "name": "kiro-godot-accelerator",
+  "version": "1.0.0",
+  "description": "Kiro Power for Godot Engine — AI-powered development accelerator with MCP integration",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:property": "vitest run tests/property",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/ --ext .ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "godot",
+    "godot4",
+    "gdscript",
+    "game-development",
+    "mcp",
+    "kiro",
+    "ai-assistant",
+    "scene-management",
+    "performance-analysis"
+  ],
+  "author": "Danny Ho",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0",
+    "@vitest/coverage-v8": "^1.2.0",
+    "fast-check": "^3.15.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

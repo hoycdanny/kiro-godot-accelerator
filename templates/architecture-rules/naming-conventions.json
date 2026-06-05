@@ -1,0 +1,56 @@
+{
+  "name": "Godot Naming Conventions",
+  "description": "Enforced naming rules based on official GDScript style guide",
+  "reference": "https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html",
+  "rules": [
+    {
+      "target": "files",
+      "pattern": "^[a-z][a-z0-9_]*\\.(gd|tscn|tres|gdshader)$",
+      "description": "Files use snake_case",
+      "examples": { "valid": ["player_controller.gd", "main_menu.tscn"], "invalid": ["PlayerController.gd", "MainMenu.tscn"] }
+    },
+    {
+      "target": "class_name",
+      "pattern": "^[A-Z][a-zA-Z0-9]*$",
+      "description": "class_name uses PascalCase",
+      "examples": { "valid": ["PlayerController", "HealthComponent"], "invalid": ["player_controller", "healthComponent"] }
+    },
+    {
+      "target": "variables",
+      "pattern": "^[a-z_][a-z0-9_]*$",
+      "description": "Variables use snake_case",
+      "examples": { "valid": ["move_speed", "max_health", "_internal_state"], "invalid": ["moveSpeed", "MaxHealth"] }
+    },
+    {
+      "target": "constants",
+      "pattern": "^[A-Z][A-Z0-9_]*$",
+      "description": "Constants use SCREAMING_SNAKE_CASE",
+      "examples": { "valid": ["MAX_SPEED", "TILE_SIZE"], "invalid": ["max_speed", "MaxSpeed"] }
+    },
+    {
+      "target": "functions",
+      "pattern": "^_?[a-z][a-z0-9_]*$",
+      "description": "Functions use snake_case, private with underscore prefix",
+      "examples": { "valid": ["get_health()", "_update_animation()"], "invalid": ["GetHealth()", "updateAnimation()"] }
+    },
+    {
+      "target": "signals",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Signals use snake_case, preferably past tense",
+      "examples": { "valid": ["health_changed", "enemy_died"], "invalid": ["HealthChanged", "on_enemy_die"] }
+    },
+    {
+      "target": "enums",
+      "pattern": "^[A-Z][a-zA-Z0-9]*$",
+      "value_pattern": "^[A-Z][A-Z0-9_]*$",
+      "description": "Enum names PascalCase, values SCREAMING_SNAKE_CASE",
+      "examples": { "valid": ["enum State { IDLE, RUNNING }"], "invalid": ["enum state { idle, running }"] }
+    },
+    {
+      "target": "nodes",
+      "pattern": "^[A-Z][a-zA-Z0-9]*$",
+      "description": "Node names use PascalCase in scene tree",
+      "examples": { "valid": ["Player", "HealthBar", "EnemySpawner"], "invalid": ["player", "health_bar"] }
+    }
+  ]
+}

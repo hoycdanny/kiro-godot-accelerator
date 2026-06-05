@@ -1,0 +1,25 @@
+{
+  "name": "iOS Release Build",
+  "description": "Production export configuration for iOS",
+  "platform": "iOS",
+  "command": "godot --headless --export-release \"iOS\" builds/ios/game.ipa",
+  "settings": {
+    "min_ios_version": "15.0",
+    "architectures_arm64": true,
+    "bundle_identifier": "com.studio.gamename",
+    "version": "1.0.0",
+    "short_version": "1.0"
+  },
+  "prerequisites": [
+    "macOS with Xcode 15+ installed",
+    "Apple Developer Account (paid, $99/year)",
+    "Provisioning profile and signing identity configured",
+    "Export templates for iOS installed"
+  ],
+  "notes": [
+    "Can only build on macOS",
+    "Test on physical devices (simulator has limitations)",
+    "App Store requires screenshots, metadata, and privacy labels",
+    "Handle Safe Area (notch/dynamic island) in UI"
+  ]
+}
